@@ -1,0 +1,185 @@
+/* Theme-specific colors defined */
+.light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --scrollbar-bg: #f1f1f1; /* Scrollbar track color for light theme */
+  --scrollbar-thumb: #888; /* Scrollbar thumb color for light theme */
+  --scrollbar-thumb-hover: #555; /* Scrollbar thumb hover color for light theme */
+}
+
+.dark {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --scrollbar-bg: #333; /* Scrollbar track color for dark theme */
+  --scrollbar-thumb: #888; /* Scrollbar thumb color for dark theme */
+  --scrollbar-thumb-hover: #aaa; /* Scrollbar thumb hover color for dark theme */
+}
+
+/* Default (mobile) styles */
+#nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 3rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  z-index: 3;
+
+  i {
+    padding: 1rem;
+  }
+}
+
+#theme_icon {
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+#menu_icon {
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+#nav_logo {
+  max-width: 1rem;
+}
+
+.nav_link {
+  text-decoration: none;
+  color: var(--text-color);
+  display: none; /* Hidden by default for mobile */
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.navLink.active {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.alt_nav_link {
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav_link:hover,
+.alt_nav_link:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+#alt_nav.hidden {
+  display: none;
+}
+
+#alt_nav.visible {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  padding: 10px;
+  border: 1px solid var(--text-color);
+}
+
+@media screen and (min-width: 481px) {
+  #nav {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+    width: 20%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-color);
+    z-index: 2;
+  }
+
+  #alt_nav {
+    display: none;
+  }
+
+  .main-content {
+    margin-top: 0;
+    margin-left: 20%;
+    width: 80%;
+    height: 100vh;
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+
+  #nav_left {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  #nav_right {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 95%;
+    width: 100%;
+  }
+
+  #menu_icon {
+    display: none; /* Hide the menu icon on larger screens */
+  }
+
+  .nav_link {
+    display: grid; /* Make links visible on larger screens */
+    place-items: center;
+    color: var(--text-color);
+  }
+
+  #theme_icon {
+    position: relative;
+    top: -3%;
+    right: 20%;
+    font-size: 1.5rem;
+  }
+}
+
+.light #theme_icon {
+  color: orange;
+}
+
+.dark #theme_icon {
+  color: yellow;
+}
+
+#nav_logo {
+  height: 2.5rem;
+}
+
+#nav_right {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 2px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg); /* Color of the scrollbar track */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover); /* Color when hovered */
+}

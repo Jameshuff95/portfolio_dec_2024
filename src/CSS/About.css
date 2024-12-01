@@ -1,0 +1,195 @@
+/* Reset and default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#arrowContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  min-width: 90%; /* Default for mobile */
+  height: 10%;
+
+  h4 {
+    padding: 0;
+    margin: 0;
+  }
+
+  i {
+    cursor: pointer;
+    border: 1px solid var(--text-color);
+    box-shadow: inset 0 0 0.25rem var(--text-color);
+    border-radius: 5px;
+  }
+
+  i:active {
+    box-shadow: inset 0 0 0.5rem var(--text-color);
+    transform: scale(0.95);
+  }
+}
+
+#missionStatement {
+  min-width: 100%;
+  padding: 3% !important;
+  height: 100%;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+#technical_skills_title {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+#technical_skills_list {
+  display: flex;
+  flex-direction: column; /* Default for mobile */
+  margin: 0 !important;
+  padding: 0.25rem !important;
+  overflow-y: scroll !important;
+}
+
+#soft_skills_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  font-size: 0.9rem;
+}
+
+.bi-check {
+  color: green;
+}
+
+.technical_skills_list_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.progressBar {
+  min-width: 50%;
+  height: 0.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 0.5rem var(--text-color);
+  margin: 0.5rem 0;
+  border: 1px solid var(--text-color);
+}
+
+#certifications_list {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  width: 95%;
+  gap: 0.5rem;
+  margin: auto !important;
+}
+
+.certification {
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0.5rem var(--text-color);
+  min-width: 75%;
+  max-width: 450px;
+  padding: 2%;
+  color: var(--text-color);
+  height: 75%;
+}
+
+#certTitle {
+  text-align: center;
+  min-width: 100%;
+  margin: 0.5rem 0;
+}
+
+#certLower {
+  display: flex;
+  flex-direction: column; /* Default for mobile */
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#certImage {
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 75%; /* Default for mobile */
+  max-width: 50px;
+  min-height: 8rem;
+}
+
+#certDescription {
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  box-shadow: inset 0 0 0.5rem var(--text-color);
+  font-size: 0.9rem;
+  min-width: 75%; /* Default for mobile */
+  min-height: 100%;
+  margin: 0;
+  padding: 2%;
+}
+
+/* Larger screens 451 px and above */
+@media screen and (min-width: 451px) {
+  #soft_skills_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+}
+
+/* Tablets and desktops 801 px and above */
+@media screen and (min-width: 801px) {
+  #soft_skills_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #certifications_list {
+    display: grid;
+    place-items: center;
+  }
+
+  .certification {
+    width: 50%;
+  }
+
+  #certifications_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #missionStatement {
+    font-size: 1.25rem;
+  }
+
+  #technical_skills_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    place-items: center;
+    height: 85vh;
+  }
+
+  .technical_skills_list_item {
+    width: 80%;
+  }
+}
