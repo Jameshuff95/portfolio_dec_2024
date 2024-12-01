@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../src/index.css';
+import '../index.css';
 import '../CSS/About.css';
 
 const About = () => {
